@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Tests</title>
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.15.0.css">
+</head>
+
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <script src="https://code.jquery.com/qunit/qunit-2.15.0.js"></script>
+    <script src="functions.js"></script>
+    <script>
+        // Tests will go here
+        QUnit.module('add', function() {
+            QUnit.test('should add two numbers', function(assert) {
+                assert.equal(add(1, 1), 2);
+            });
+            QUnit.test('should handle String input', function(assert) {
+                assert.equal(add("1", 1), 2);
+            });
+            QUnit.test('should handle String input', function(assert) {
+                assert.equal(add("6", ""), 6);
+                assert.equal(add("", "7"), 7);
+            });
+        });
+    </script>
+</body>
+
+</html>

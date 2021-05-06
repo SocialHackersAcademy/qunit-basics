@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing our App with QUnit</title>
+</head>
+<body>
+    <p>
+        <label for="num_a">Number A:</label>
+        <input type="number" id="num_a">
+    </p>
+    <p>
+        <label for="num_b">Number B:</label>
+        <input type="number" id="num_b">
+    </p>
+    <p>
+        <button id="add">Add</button>
+        <button id="sub">Subtract</button>
+        <div id="result"></div>
+    </p>
+    <script src="functions.js"></script>
+    <script>
+        const numA   = document.getElementById("num_a");
+        const numB   = document.getElementById("num_b");
+        const addBtn = document.getElementById("add");
+        const subBtn = document.getElementById("sub");
+        const result = document.getElementById("result");
+
+        // Add Event Listeners to the buttons:
+        addBtn.addEventListener("click", e =>{
+            console.log(numA.value, numB.value);
+            result.innerText = add( numA.value, numB.value );
+        });
+        subBtn.addEventListener("click", e =>{
+            console.log(numA.value, numB.value);
+            result.innerText = sub( numA.value, numB.value );
+        });
+
+    </script>
+    
+</body>
+</html>
